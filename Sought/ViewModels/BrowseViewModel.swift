@@ -14,8 +14,8 @@ final class BrowseViewModel: ObservableObject {
 
     @Published private(set) var items: [FashionItem] = []
 
-    init(fashionItemProvider: FashionItemProviding = MockFashionItemService()) {
-        self.fashionItemProvider = fashionItemProvider
+    init(fashionItemProvider: FashionItemProviding? = nil) {
+        self.fashionItemProvider = fashionItemProvider ?? MockFashionItemService()
         loadItems()
     }
 
